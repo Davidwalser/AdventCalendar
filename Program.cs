@@ -10,11 +10,28 @@ namespace AdventCalendar
         {
             Console.WriteLine("Happy Advent!");
             Day1();
+            Day2();
             Console.ReadLine();
+        }
+
+        private static void Day2()
+        {
+            Console.WriteLine("###################");
+            Console.WriteLine("Day2");
+            Console.WriteLine("###################");
+            var input = File.ReadAllLines(@"C:\Study\AdventCalendar\Day2\input.txt").ToArray();
+            var day2 = new Day2.Day2(input);
+            var puzzle1Result = day2.Puzzle1();
+            Console.WriteLine($"Puzzle1: found results:{puzzle1Result}");
+            var puzzle2Result = day2.Puzzle2();
+            Console.WriteLine($"Puzzle2: found results:{puzzle2Result}");
         }
 
         private static void Day1()
         {
+            Console.WriteLine("###################");
+            Console.WriteLine("Day1");
+            Console.WriteLine("###################");
             var day1 = new Day1.Day1();
             var numbers = File.ReadAllLines(@"C:\Study\AdventCalendar\Day1\Numbers.txt").Select(int.Parse).ToArray();
             var puzzle1Result = day1.Puzzle1(numbers);
