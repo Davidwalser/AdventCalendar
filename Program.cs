@@ -14,6 +14,19 @@ namespace AdventCalendar
             Console.ReadLine();
         }
 
+        private static void Day3()
+        {
+            Console.WriteLine("###################");
+            Console.WriteLine("Day3");
+            Console.WriteLine("###################");
+            var input = File.ReadAllLines(@"C:\Study\AdventCalendar\Day3\input.txt").ToArray();
+            var day3 = new Day3.Day3(input);
+            var puzzle1Result = day3.Puzzle1();
+            Console.WriteLine($"Puzzle1: found results:{puzzle1Result}");
+            var puzzle2Result = day3.Puzzle2();
+            Console.WriteLine($"Puzzle2: found results:{puzzle2Result}");
+        }
+
         private static void Day2()
         {
             Console.WriteLine("###################");
