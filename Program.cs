@@ -11,6 +11,7 @@ namespace AdventCalendar
             Console.WriteLine("Happy Advent!");
             Day1();
             Day2();
+            Day3();
             Console.ReadLine();
         }
 
