@@ -8,19 +8,15 @@ namespace AdventCalendar.Day3
     public class Day3
     {
         private readonly char[,] _field;
-        private readonly int _fieldMultiplier = 100;
 
         public Day3(string[] input)
         {
-            _field = new char[input.Length, input[0].Length* _fieldMultiplier];
-            for (int a = 0; a < _fieldMultiplier; a++)
+            _field = new char[input.Length, input[0].Length];
+            for (int i = 0; i < input.Length; i++)
             {
-                for (int i = 0; i < input.Length; i++)
+                for (int j = 0; j < input[i].Length; j++)
                 {
-                    for (int j = 0; j < input[i].Length; j++)
-                    {
-                        _field[i, j + (a * input[i].Length)] = input[i][j];
-                    }
+                    _field[i, j] = input[i][j];
                 }
             }
         }
@@ -37,7 +33,7 @@ namespace AdventCalendar.Day3
             for (int i = down; i < _field.GetLength(0); i += down)
             {
                 j += right;
-                if (_field[i, j] == '#')
+                if (_field[i, j % _field.GetLength(1)] == '#')
                 {
                     foundTrees++;
                 }
